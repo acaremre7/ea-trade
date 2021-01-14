@@ -14,11 +14,11 @@ public class Main {
             System.out.println("schuurs " + schuurIndex);
 
             int maximumProfit = 0;
-            Set<Integer> numberOfflutsToBuy = new HashSet<>();
+            Set<Integer> numbersOfFlutsToBuy = new HashSet<>();
 
             for (List<Integer> flutList : schuurList) {
                 int maximumProfitForStack = -1;
-                Set<Integer> numberOfflutsToBuyForStack = new HashSet<>();
+                Set<Integer> numbersOfFlutsToBuyForStack = new HashSet<>();
                 int currentProfit = 0;
                 int flutCount = 0;
 
@@ -26,29 +26,29 @@ public class Main {
                     flutCount++;
                     currentProfit += 10 - flutPrice;
                     if (currentProfit == maximumProfitForStack) {
-                        numberOfflutsToBuyForStack.add(flutCount);
+                        numbersOfFlutsToBuyForStack.add(flutCount);
                     } else if (currentProfit >= maximumProfitForStack) {
-                        numberOfflutsToBuyForStack.clear();
-                        numberOfflutsToBuyForStack.add(flutCount);
+                        numbersOfFlutsToBuyForStack.clear();
+                        numbersOfFlutsToBuyForStack.add(flutCount);
                         maximumProfitForStack = currentProfit;
                     }
                 }
                 if (maximumProfitForStack > 0) {
                     maximumProfit += maximumProfitForStack;
-                    if(numberOfflutsToBuy.isEmpty()){
-                        numberOfflutsToBuy.addAll(numberOfflutsToBuyForStack);
+                    if(numbersOfFlutsToBuy.isEmpty()){
+                        numbersOfFlutsToBuy.addAll(numbersOfFlutsToBuyForStack);
                     }else {
-                        numberOfflutsToBuy = cartesianSumOfLists(numberOfflutsToBuy, numberOfflutsToBuyForStack);
+                        numbersOfFlutsToBuy = cartesianSumOfSets(numbersOfFlutsToBuy, numbersOfFlutsToBuyForStack);
                     }
                 }
             }
             schuurIndex++;
             System.out.println("Maximum profit is " + maximumProfit);
-            System.out.println("Number of fluts to buy " + numberOfflutsToBuy);
+            System.out.println("Number of fluts to buy " + numbersOfFlutsToBuy);
         }
     }
 
-    private static Set<Integer> cartesianSumOfLists(Set<Integer> set1, Set<Integer> set2){
+    private static Set<Integer> cartesianSumOfSets(Set<Integer> set1, Set<Integer> set2){
         Set<Integer> result = new HashSet<>();
         for(int i : set1){
             for (int j : set2){
