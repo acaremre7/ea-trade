@@ -63,24 +63,12 @@ smallest.
 
 schuurs 1
 
-schuurs 1
-
 Maximum profit is 8.
-
-Maximum profit is 8.
-
-Number of fluts to buy: 4
 
 Number of fluts to buy: 4
 
 schuurs 2
 
-schuurs 2
-
-Maximum prof
-
-Maximum profit is 40.it is 40.
-
-Number of fluts to buy: 6 7 8 9 10 12 13
+Maximum profit is 40.
 
 Number of fluts to buy: 6 7 8 9 10 12 13
